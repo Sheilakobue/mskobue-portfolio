@@ -24,14 +24,35 @@ export default function Navbar() {
           <h1 className="text-3xl text-blue-700 font-bold">MMS</h1>
         </Link>
         <ul className="flex gap-10 max-md:hidden text-black">
-{navLinks.map((link)=>(
-    <Link href={link.route} key={link.id}
-    className="hover:underline hover:text-blue-700 transition duration-500"
-    >
-        <li>{link.name}</li>
-    </Link>
-))}
+          {navLinks.map((link) => (
+            <Link
+              href={link.route}
+              key={link.id}
+              className="hover:underline hover:text-blue-700  transition duration-500"
+            >
+              <li>{link.name}</li>
+            </Link>
+          ))}
         </ul>
+        <div
+          className=" md:hidden txt-3xl cursor-pointer text-black"
+          onClick={handleOpenMobileMenu}
+        >
+          {openMobileMenu ? <MdClose /> : <FiMenu />}
+        </div>
+        {openMobileMenu && (
+          <ul className="md:hidden bg-blue-700 absolute top-14 right-5 px-4 py-6 text-center rounded-md flex flex-col gap-3 shadow-md">
+            {navLinks.map((link) => (
+            <Link
+              href={link.route}
+              key={link.id}
+          
+            >
+              <li>{link.name}</li>
+            </Link>
+          ))}
+          </ul>
+        )}
       </div>
     </nav>
   );
