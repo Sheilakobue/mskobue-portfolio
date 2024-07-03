@@ -12,6 +12,7 @@ import {
   OutMode,
 } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
+
 const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
 

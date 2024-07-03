@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link href={"home"}>
           <h1 className="text-3xl text-blue-700 font-bold">MMS</h1>
         </Link>
-        <ul className="flex gap-10 max-md:hidden text-black">
+        <ul className="flex gap-10 max-md:hidden text-blue-300">
           {navLinks.map((link) => (
             <Link
               href={link.route}
@@ -35,7 +35,7 @@ export default function Navbar() {
           ))}
         </ul>
         <div
-          className=" md:hidden txt-3xl cursor-pointer text-black"
+          className=" md:hidden txt-3xl cursor-pointer text-blue-700"
           onClick={handleOpenMobileMenu}
         >
           {openMobileMenu ? <MdClose /> : <FiMenu />}
