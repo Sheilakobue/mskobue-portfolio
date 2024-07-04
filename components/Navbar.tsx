@@ -32,7 +32,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`w-full top-0 z-[99999] py-5 ${isScrolling ? "fixed top-0 bg-white shadow-lg transition duration-500":"relative"}`}>
+    <nav className={`w-full top-0 z-[99999] py-5 ${isScrolling ? "fixed top-0 bg-blue-300 border-0 bg-opacity-50  shadow-lg transition duration-500":"relative"}`}>
       <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
         {/* Logo linking to the home section */}
         <Link href={"#home"}>
@@ -42,7 +42,7 @@ export default function Navbar() {
         <ul className={`flex gap-10 
         max-md:hidden ${isScrolling ? 
         "text-blue-700" : "text-blue-300"}`} >
-          {navLinks.map((link) => (
+          {navLinks.map((link) => ( 
             <Link
               href={link.route}
               key={link.id}

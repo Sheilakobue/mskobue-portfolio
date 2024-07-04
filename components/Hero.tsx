@@ -18,10 +18,10 @@ export default function Hero() {
       <ParticlesBackground />
       <div className="relative flex justify-between max-w-[1400px] mx-auto items-center h-full w-[91%] max-md:flex-col">
         <div className="flex flex-col justify-center text-blue-300 flex-1 max-md:order-2 max-md:text-center">
-          <h2 className="font-bold md:text-4xl text-3xl mb-2">
+          <h2 className="font-bold md:text-1xl text-2xl mb-2">
             Hi, I am Sheila Kobue, a Full Stack
           </h2>
-          <h1 className="xl:text-4xl lg:text-6xl md:text-5xl text-4xl text-yellow-300 mb-5">
+          <h1 className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-yellow-300 mb-5">
             Developer
           </h1>
           {/* Animated text */}
