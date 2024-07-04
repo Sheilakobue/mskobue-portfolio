@@ -1,12 +1,20 @@
+/* Import base styles from Tailwind CSS */
 @tailwind base;
+
+/* Import component styles from Tailwind CSS */
 @tailwind components;
+
+/* Import utility classes from Tailwind CSS */
 @tailwind utilities;
 
-*{
-  margin:0;
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
   padding: 0;
-  box-sizing:border-box;
+  box-sizing: border-box; /* Use border-box box-sizing for all elements */
 }
-html{
+
+/* Enable smooth scrolling behavior for the entire document */
+html {
   scroll-behavior: smooth;
 }
