@@ -1,10 +1,10 @@
 "use client"; // This directive indicates that the code is client-side
 
+import useScrollEffect from "@/hooks/useScroll";
 import Link from "next/link"; // Import the Link component from Next.js for navigation
 import { useState } from "react"; // Import the useState hook from React
 import { FiMenu } from "react-icons/fi"; // Import the FiMenu icon from react-icons
 import { MdClose } from "react-icons/md"; // Import the MdClose icon from react-icons
-
 // Define the navigation links with unique IDs, names, and routes
 const navLinks = [
   { id: 1, name: "Home", route: "#home" },
@@ -24,20 +24,24 @@ const navLinks = [
 export default function Navbar() {
   const [openMobileMenu, setOpenMobileMenu] = useState(false); // State to manage the mobile menu visibility
 
+  const isScrolling = useScrollEffect()
+
   // Function to toggle the mobile menu
   const handleOpenMobileMenu = () => {
     setOpenMobileMenu(!openMobileMenu);
   };
 
   return (
-    <nav className="w-full top-0 z-[99999] py-6 relative">
+    <nav className={`w-full top-0 z-[99999] py-5 ${isScrolling ? "fixed top-0 bg-white shadow-lg transition duration-500":"relative"}`}>
       <div className="max-w-[1400px] mx-auto flex justify-between items-center w-[91%]">
         {/* Logo linking to the home section */}
         <Link href={"#home"}>
           <h1 className="text-3xl text-blue-700 font-bold">MMS</h1>
         </Link>
         {/* Desktop navigation links */}
-        <ul className="flex gap-10 max-md:hidden text-blue-300">
+        <ul className={`flex gap-10 
+        max-md:hidden ${isScrolling ? 
+        "text-blue-700" : "text-blue-300"}`} >
           {navLinks.map((link) => (
             <Link
               href={link.route}
@@ -50,7 +54,7 @@ export default function Navbar() {
         </ul>
         {/* Mobile menu toggle button */}
         <div
-          className="md:hidden txt-3xl cursor-pointer text-blue-700"
+          className={`md:hidden txt-3xl cursor-pointe ${isScrolling ? "text-blue-700" : "text-blue-300"}`}
           onClick={handleOpenMobileMenu}
         >
           {openMobileMenu ? <MdClose /> : <FiMenu />}
